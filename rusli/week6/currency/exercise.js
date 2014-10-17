@@ -16,15 +16,8 @@
 // Can you refactor the code so that it uses functions? Write a function dollarsToPounds that takes a dollar number as input and outputs a string of what the pound equivalent is.
 // Do the same for poundsToDollars
 
-var currentRateAUBP = 0.5457 // AUD_TO_GBP
-
-var a = currentRate * 10
-
-console.log('10 Australian Dollar is ' + a + '£' );
 
 
-var currentRateBPAU = 1.8326
-
-var b = currentRateBPAU 
-
-console.log('1 British Pound is equal to ' + b + 'AUD');
+var rate = 1.8326
+console.log('1 British Pound is equal to ' + rate + 'AUD');
+console.log('1 Australian Dollar is equal to ' + (1/rate).toFixed(4) + 'GBP');
