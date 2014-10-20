@@ -11,23 +11,9 @@ var mta = {
 	line3: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
 };
 
-var findLine = function(stop){
-	for (var i in mta)
-		if (lines[i].indexOf(stop) > -1){
-			return i;
-}
 
 
-var stopdistance = function(stopA, stopB,line){
-	var distance = Math.abs(lines[line].indexOf(stopA) - lines[lines].indexOf(stopB));
-}
-
-// for 
-// var answer = mta[i]
-
-var stations = function (startStation, endStation){
-	var lineA = findLine(stopA);
-
+var startLine = prompt('Enter start line:')
 
 	// Find the line for startStation.
 	// startLine = 'N'; // Fix this
@@ -41,14 +27,14 @@ var stations = function (startStation, endStation){
 	// // Find the INDEX of the endStation in its line
 	// endIndex = 5;
 
-	if (startLine === endLine){
-		var answer = Math.abs(mta.startIndex - mta.endIndex);
-		console.log(answer)
-	}
-}
+// 	if (startLine === endLine){
+// 		var answer = Math.abs(mta.startIndex - mta.endIndex);
+// 		console.log(answer)
+// 	}
+// }
 
 
-stations('34th', '8th');
+// stations('34th', '8th');
 
 
 // get the distance between stop a and stop b 
