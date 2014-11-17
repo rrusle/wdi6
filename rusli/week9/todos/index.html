@@ -2,16 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TO DO List</title>
-  <script src="js/lib/backbone.js"></script>
-  <script src="js/lib/jquery.js"></script>
-  <script src="js/lib/underscore.js"></script>
+  <title>TO DO List app</title>
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/backbone.localStorage.js"></script>
+  <script src="js/handlebars.js"></script>
+  <script src="js/app.js"></script>
+
+  <script src="collections/Todos.js"></script>
+  <script src="models/Todo.js"></script>
+  <script src="routers/Router.js"></script>
+
+  <link rel="stylesheet" href="css/todos.css">
 </head>
 <body>
-  <h1>To Do List app</h1>
-      <input id="new-todo" placeholder="To Do List?" autofocus>
+  <section id="todoapp">
+    
+    <header id="header">
+      <h1>todos</h1>
+      <input id="new-todo" placeholder="What needs to be done?" autofocus>
+    </header>
+    
+    <section id="main">
       <input id="toggle-all" type="checkbox">
-      <label for="toggle-all">Mark as complete</label>
+      <label for="toggle-all">Mark all as complete</label>
       <ul id="todo-list"></ul>
+    </section>
+    
+    <footer id="footer"></footer>
+
+  </section>
+  
+  <div id="info">
+    <p>Double-click to edit a todo</p>
+    <p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
+    <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+  </div>
+
+    <script type="text/template" id="stats-template">
+    
+    <script type="text/template" id="item-template">
+      <div class="view">
+        <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+        <label><%= title %></label>
+        <button class="destroy"></button>
+      </div>
+        <input class="edit" value="<%= title %>">
+    </script>
+
+
+    <span id="todo-count">
+      <strong><%= remaining %></strong> 
+      <%= remaining === 1 ? 'item' : 'items' %> left
+    </span>
+    
+    <ul id="filters">
+      <li><a class="selected" href="#/">All</a></li>
+      <li><a href="#/active">Active</a></li>
+      <li><a href="#/completed">Completed</a></li>
+    </ul>
+    
+    <% if (completed) { %>
+      <button id="clear-completed">Clear completed (<%= completed %>)</button>
+    <% } %>
+    
+    </script>
+
 </body>
 </html>
